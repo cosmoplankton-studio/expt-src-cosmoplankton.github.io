@@ -1,0 +1,41 @@
+
+html,
+body {
+    height: 100%;
+    background-color: #102a61;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+    overflow: hidden;
+    margin: 0;
+}
+
+#container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+#overlay  {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    pointer-events:none; 
+}
+#reactApp {
+    pointer-events:auto; 
+}
+#appCanvas {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    border: 1px solid black;
+    overflow: hidden;
+}
+div.centeredDiv {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}

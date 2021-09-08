@@ -1,8 +1,11 @@
 extern crate wasm_bindgen;
+
 use wasm_bindgen::prelude::*;
+
 mod app_state;
 mod app_client;
 mod experiments;
+
 
 #[wasm_bindgen]
 extern "C" {

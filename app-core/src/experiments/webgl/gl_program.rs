@@ -1,9 +1,9 @@
 use super::super::common_utils as utils;
 use super::gl_utils as gl_utils;
-use super::super::super::*;
 use web_sys::WebGlRenderingContext as Gl;
 use web_sys::*;
 use nalgebra::{Perspective3, Matrix4, Vector3};
+// use super::super::super::*;
 
 
 pub struct SimpleStaticProgram {

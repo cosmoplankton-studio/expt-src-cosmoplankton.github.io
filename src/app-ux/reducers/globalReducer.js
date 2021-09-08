@@ -1,4 +1,4 @@
-import {wasm} from '../../index'
+import webApp from '../../app'
 
 const initialState = {
     message: "store.global-slice.message",
@@ -13,11 +13,11 @@ export default function globalReducer(state = initialState, action) {
         return state
       }
       case 'global/pause': {
-        wasm.then(m => { m.pause_update(true) })
+        webApp.pauseUpdate(true)
         return state
       }
       case 'global/unpause': {
-        wasm.then(m => { m.pause_update(false) })
+        webApp.pauseUpdate(false)
         return state
       }
       case 'global/message/hello': {

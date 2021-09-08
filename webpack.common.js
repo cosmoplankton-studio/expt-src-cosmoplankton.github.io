@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-let pages = ["index", "webgl"]
+let pages = ["index", "webgl", "webgpu"]
 let plugins = [
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
@@ -23,7 +23,7 @@ plugins = plugins.concat(
     pages.map(
         (page) => 
             new HtmlWebpackPlugin({
-                template: path.resolve(__dirname, `src/${page}-template.html`),
+                template: path.resolve(__dirname, `src/pages/${page}-template.html`),
                 filename: `${page}.html`,
                 chunks: [page],
               })
@@ -32,11 +32,8 @@ plugins = plugins.concat(
 
 module.exports = {
     mode: 'production',
-    // entry: {
-    //    index: path.resolve(__dirname, 'src/index.js')
-    // },
     entry: pages.reduce((config, page) => {
-        config[page] = path.resolve(__dirname, `src/${page}.js`);
+        config[page] = path.resolve(__dirname, `src/pages/${page}.js`);
         return config;
       }, {}),
     output: {
@@ -61,6 +58,11 @@ module.exports = {
               }
             }
         },
+        {
+            test: /\.?css$/,
+            exclude: /node_modules/,
+            use: ['style-loader', 'css-loader']
+        }
         ]
     },
   optimization: {
