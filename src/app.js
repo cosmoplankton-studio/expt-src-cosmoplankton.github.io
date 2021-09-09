@@ -44,6 +44,10 @@ class WebApp {
             let lastDrawTime = -1; // milliseconds
 
             function tick() {
+                // Note: We could move this gameloop inside the wasm-module 
+                // using the 'web_sys' crate. Keeping it here so that we could 
+                // tick multiple mixed modules (js/wasm) together from here 
+                // incase it is required in the app.
                 window.requestAnimationFrame(tick);
                 const currTime = Date.now();
 

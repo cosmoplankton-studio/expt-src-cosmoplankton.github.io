@@ -1,6 +1,6 @@
 *Cosmoplankton Experiments*: Source for the various webapp experiments using WebAssembly, Rust, React, Redux, etc.
    
-WebApp Link: [expt.cosmoplankton.studio](https://expt.cosmoplankton.studio/)
+WebApp Link: [experiments.cosmoplankton.studio](https://experiments.cosmoplankton.studio/)
 
 ---
 
